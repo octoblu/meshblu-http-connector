@@ -1,7 +1,7 @@
 {
   "name": "meshblu-http-connector",
   "repository": "octoblu/meshblu-http-connector",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "connector.js",
   "scripts": {
     "preinstall": "node -e \"try{require('./skip-install.js')}catch(e){}\"",
