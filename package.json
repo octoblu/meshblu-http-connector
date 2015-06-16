@@ -1,7 +1,7 @@
 {
   "name": "meshblu-http-connector",
   "repository": "octoblu/meshblu-http-connector",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "connector.js",
   "scripts": {
     "preinstall": "node -e \"try{require('./skip-install.js')}catch(e){}\"",
@@ -10,8 +10,11 @@
   },
   "dependencies": {
     "coffee-script": "^1.9.0",
+    "debug": "^2.1.0",
+    "fstream": "^1.0.6",
     "meshblu": "^1.22.0",
-    "debug": "^2.1.0"
+    "request": "^2.57.0",
+    "tar": "^2.1.1"
   },
   "bundledDependencies": [
     "request",
