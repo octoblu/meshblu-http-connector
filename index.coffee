@@ -20,16 +20,16 @@ class Plugin extends EventEmitter
     @optionsSchema = OPTIONS_SCHEMA
 
   onMessage: (message) =>
-    payload = message.payload;
+    payload = message.payload
     request payload.options, (error, response, body) =>
-      this.emit 'response', body
+      @emit 'response', body
       message =
         devices: ['*']
         topic: 'http-response'
         payload:
           statusCode: response.statusCode
           body: body
-      this.emit 'message', message
+      @emit 'message', message
 
   onConfig: (device) =>
     @setOptions device.options
