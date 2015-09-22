@@ -1,8 +1,12 @@
 ## meshblu-http-connector
 
-A Meshblu connector for use in Octoblu or with other services.
+[![Build Status](https://travis-ci.org/octoblu/meshblu-http-connector.svg?branch=master)](https://travis-ci.org/octoblu/meshblu-http-connector)
+[![Code Climate](https://codeclimate.com/github/octoblu/meshblu-http-connector/badges/gpa.svg)](https://codeclimate.com/github/octoblu/meshblu-http-connector)
+[![Test Coverage](https://codeclimate.com/github/octoblu/meshblu-http-connector/badges/coverage.svg)](https://codeclimate.com/github/octoblu/meshblu-http-connector)
+[![npm version](https://badge.fury.io/js/meshblu-http-connector.svg)](http://badge.fury.io/js/meshblu-http-connector)
+[![Gitter](https://badges.gitter.im/octoblu/help.svg)](https://gitter.im/octoblu/help)
 
-Gateblu connector to make HTTP requests. Uses the [request](https://github.com/request/request) module.
+A Meshblu connector for use in Octoblu or with other services.
 
 ### Setup Instructions
 
@@ -62,30 +66,6 @@ deploy:
 ```
 
 ### Usage
-
-#### Message Schema
-```json
-{
-  "options": {
-    "method": "GET",
-    "url": "http://192.168.0.5/status"
-  }
-}
-```
-
-#### Response
-```json
-{
-  "devices": ["*"],
-  "topic": "http-response",
-  "payload": {
-    "statusCode": 200,
-    "body": {
-      "online": true
-    }
-  }
-}
-```
 
 #### Gateblu Installation
 
