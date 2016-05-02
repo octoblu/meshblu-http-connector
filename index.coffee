@@ -1,6 +1,7 @@
 'use strict';
 util           = require 'util'
 {EventEmitter} = require 'events'
+_              = require 'lodash'
 debug          = require('debug')('meshblu-http-connector')
 request        = require 'request'
 
@@ -20,9 +21,12 @@ class Plugin extends EventEmitter
     @optionsSchema = OPTIONS_SCHEMA
 
   onMessage: (message) =>
-    payload = message.payload
-    request payload.options, (error, response, body) =>
-      @emit 'response', body
+    options = _.get message, 'payload.options'
+    return if _.isEmpty options
+    return unless options.uri? || options.url?
+    debug 'got valid message', options
+    request options, (error, response, body) =>
+      return console.error error if error?
       message =
         devices: ['*']
         topic: 'http-response'
